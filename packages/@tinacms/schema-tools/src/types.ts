@@ -352,6 +352,15 @@ export type RichTextField = (
 
 type DefaultItem<ReturnType> = ReturnType | (() => ReturnType)
 
+type IndexField = {
+  name: string
+}
+
+type Index = {
+  name: string
+  fields: IndexField[]
+}
+
 type ObjectListUiProps = {
   /**
    * Override the properties passed to the field
@@ -499,6 +508,7 @@ export interface FieldCollection {
    */
   defaultItem?: DefaultItem<Record<string, any>>
   templates?: never
+  indexes?: Index[]
   /**
    * Fields define the shape of the content and the user input.
    *
